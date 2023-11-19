@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Gonzalo Guerra">
+    <title>Placeholder Title</title>
+    <!-- Add Gogle fonts -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Agbalumo">
+    <!-- Include Bootstrap via CDN - https://getbootstrap.com/ -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    <!-- Add css last to override Bootstrap -->
+    <link rel="stylesheet" href="styles\style.css" />
+</head>
+<body class="d-flex flex-column min-vh-100">
+    <!-- Nav Bar -->
+    <nav class="navbar navbar-expand-lg" data-bs-theme="dark">
+        <div class="container">
+            <h1 id="logo"><a href="index.html">Vandeley Industries</a><br>The latex importer exporter architects</h1>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="overview.html">Overview</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="products.html">Products</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contact.html">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!-- Working area -->
+    <div class="container">
+        <h2 class="display-3 text-center text-muted my-3">Contact</h2>
+        <div class="row mb-5">
+            <div class="col-md-3 sidebar">
+                <h3 class="mb-3">Details</h3>
+                <dl>
+                    <dt class="my-1">Mailing Address</dt>
+                        <dd>Vandeley Industries, 2880 Broadway, New York, NY 10025, USA</dd>
+                    <dt class="my-1">Phone Number</dt>
+                        <dd>+1 900 000 000</dd>
+                    <dt class="my-1">E mail Address</dt>
+                        <dd>info@vandeley.com</dd>
+                    <dt class="my-1">Social media</dt>
+                    <dd>TODO: add icons and links</dd>
+                </dl>
+            </div>
+            <div class="col-md-9">
+                <h3 class="mb-3">Directions</h3>
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3020.024788244982!2d-73.96802178713389!3d40.80544907126045!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c2f63c75af2d65%3A0xf45542f6cb090cc9!2s2880%20Broadway%2C%20New%20York%2C%20NY%2010025%2C%20USA!5e0!3m2!1sen!2sie!4v1699998629014!5m2!1sen!2sie" width="800" height="600" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+        </div>
+        <div class="row">
+            <h3 class="text-center my-3">Leave a message</h3>
+            <p class="my-3">Get started by filling out the form below and we will connect you with the right expert to answer all your questions.</p>
+        </div>
+        <!-- Form -->
+        <div class="container border border-primary">
+            <form class="row needs-validation" novalidate action="" >
+                <div class="col-md-6">
+                    <h4>Contact Information</h4>
+                </div>
+                <div class="col-md-6 text-md-end">
+                    <p class="fst-italic">Required Fields(*)</p>
+                </div>
+                <div class="col-md-6 form-group mb-3">
+                    <label for="inputFirstName" class="form-label required">First name</label>
+                    <input type="text" class="form-control" id="inputFirstName" required>
+                </div>
+                <div class="col-md-6 form-group mb-3">
+                    <label for="inputLastName" class="form-label required">Last name</label>
+                    <input type="text" class="form-control" id="inputLastName" required>
+                </div>
+                <div class="col-md-6 form-group mb-3">
+                    <label for="inputPhone" class="form-label required">Phone Number</label>
+                    <input type="tel" class="form-control" id="inputPhone" required>
+                </div>
+                <div class="col-md-6 form-group mb-3">
+                    <label for="inputEmail" class="form-label required">E-mail Adress</label>
+                    <input type="email" class="form-control" id="inputEmail" placeholder="e.g. example@email.com" required>
+                </div>
+                <div class="col-12 form-inline mb-3">
+                    <input class="form-check-input" type="radio" name="flexRadioDefault" id="customerTypeRadio1">
+                    <label class="form-check-label" for="customerTypeRadio1">Private Customer</label>              
+                    <input class="form-check-input" type="radio" name="flexRadioDefault" id="customerTypeRadio2" checked>
+                    <label class="form-check-label" for="customerTypeRadio2">Business Customer</label>
+                </div>
+                <div class="col-12 mb-5 form-check">
+                    <input type="checkbox" class="form-check-input" id="receiveNewsCheck">
+                    <label class="form-check-label" for="receiveNewsCheck" checked>I'd like to receive news from vandeley Industries</label>
+                </div>
+                <h4>Project Information</h4>
+                <div class="col-md-6 form-group mb-3">
+                    <label for="selectBudget" class="form-label">Budget</label>
+                    <select class="form-select" id="selectBudget" required>
+                        <option selected>Please select...</option>
+                        <option> less than 1000</option>
+                        <option> 1000 - 5000 </option>
+                        <option> 5000 - 10000 </option>
+                        <option> more than 10000 </option>
+                    </select>
+                    <div class="invalid-feedback">
+                        Please select a valid state.
+                    </div>
+                </div>
+                <div class="col-md-6 form-group mb-3">
+                    <label for="selectTimeframe" class="form-label">Timeframe</label>
+                    <select class="form-select" id="selectTimeframe" required>
+                        <option selected>Please select...</option>
+                        <option> 0 - 6 months </option>
+                        <option> 6 - 12 months </option>
+                        <option> more than 12 months</option>
+                    </select>
+                    <div class="invalid-feedback">
+                        Please select a valid option.
+                    </div>
+                </div>
+                <div class="col-12 form-group mb-5">
+                    <label for="description" class="required">Please describe your project:</label>
+                    <textarea class="form-control" rows="5" id="description"></textarea>
+                </div>
+                <div class="col-12 text-center">
+                        <button type="submit" class="btn btn-primary mb-5">Submit</button>
+                </div>
+                <div class="col 12">
+                    <p>By submitting this form, you are confirming you are age 18 years or older. 
+                        Vandeley Industries may contact you for marketing-related communications. 
+                        To learn about our practices, including how to manage your preferences and settings, 
+                        you can visit our <a href="">Privacy</a> and <a href="">Cookies</a> notices.</p>
+                </div>
+            </form>
+        </div>
+        <div class="row ">
+            <div class="col-12 text-end">
+                <a href="#logo">Back to top</a>
+            </div>
+        </div>
+    </div>
+    <!-- Footer -->
+    <footer class="footer mt-auto">
+        <div class="footerTopWrapper">
+            <div class="container">
+                <div class="row py-3">
+                    <div class="col-md-3 mb-3">
+                        <img src="img/logo1.png" alt="This is the Vandeley Industries logo" style="width:150px;height:100px;"/>
+                    </div>
+                    <div class="col-md-3 mb-3">
+                        <h5>NAVIGATION</h5>
+                        <ul>
+                            <li><a href="index.html">Home</a></li>
+                            <li><a href="overview.html">Overview</a></li>
+                            <li><a href="products.html">Products</a></li>
+                            <li><a href="contact.html">Contact</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-md mb-3">
+                        <h5>Contact Information</h5>
+                        <ul>
+                            <li>Vandeley Industries, 2880 Broadway, New York, NY 10025, USA</li>
+                            <li>+1 800-000-0000</li>
+                            <li>info@vandeleyindustries.com</li>
+                            <li></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footerBottomWrapper">
+            <div class="container">
+                    <div class="row text-md-end">
+                        <p class="my-2">&copy; 2023 Vandeley Industries Inc.</p>
+                    </div>
+            </div>
+        </div>
+    </footer>
+    <!-- javascript files -->
+    <script src="script.js"></script>
+</body>
