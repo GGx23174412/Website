@@ -88,3 +88,8 @@ body{
 .required:after{
     content:" *";
 }
+
+.formErrorMessage{
+    color: red;
+    visibility: hidden;
+}
