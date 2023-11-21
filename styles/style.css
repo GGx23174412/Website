@@ -85,6 +85,7 @@ body{
     cursor: pointer;
 }
 
+/* Form */
 .required:after{
     content:" *";
 }
@@ -92,4 +93,25 @@ body{
 .formErrorMessage{
     color: red;
     visibility: hidden;
+}
+
+/* Game */
+canvas{
+    width: 100%;
+    height: 100%;
+    background-color: aquamarine;
+    border-style: solid;
+    border-color: #191919;
+}
+
+#gameWrapper{
+    z-index: 1;
+    max-width: 1000px;
+    max-height: 1000px;
+}
+
+#gameOverlay{
+    z-index: 2;
+    background-color: #191919;
+    color: white;
 }
