@@ -3,14 +3,19 @@ const mainCanvas = document.getElementById("mainCanvas");
 const mainContext = mainCanvas.getContext("2d");
 mainCanvas.width = 1000;
 mainCanvas.height = 1000;
+mainContext.font = "20px Impact";
+mainContext.fillStyle = "Black";
+
+// variables to track player's score
 let shotsOnTarget = 0;
 let currentStreak = 0;
 let longestStreak = 0;
 let finalScore = 0;
-let gameDuration = 120000;
+
+// variables to track in game time - in seconds
+let gameDuration = 120;
 let timePlayed = 0;
-mainContext.font = "20px Impact";
-mainContext.fillStyle = "Black";
+let gameInterval = null; // stores id returned by the setInterval function used to track timePlayed
 
 // Cookie class - defines a cookie object to be drawn in mainCanvas
 class Cookie{
@@ -43,7 +48,7 @@ class Cookie{
     }
 
     draw(){
-        mainContext.fillRect(this.x, this.y, this.width, this.height);
+        //mainContext.fillRect(this.x, this.y, this.width, this.height);
         mainContext.drawImage(this.image, this.x, this.y, this.width, this.height);
     }
 }
@@ -104,17 +109,15 @@ function computeStreak(){
 // auxiliary variables - these are used in the animation loop (found below)
 // to help track time between frames and to determine when to spawn a new object. 
 // To ensure uniformity on different cpus a new cookie object will be generated every 500 milliseconds.
-let timePlayer = 0;
 let timeSinceLastSpawn = 0;
 let previousTimestamp = 0;
-const spawnInterval = 500;
-let request;
+const spawnInterval = 500; // milliseconds
 
 // Animation loop - updates animation and requests new frame
 function animate(timestamp){
     // Clear canvas
     mainContext.clearRect(0, 0, mainCanvas.width, mainCanvas.height);
-    // track time between frames (cpu dependent)
+    // track time between frames
     // and determine when it's time to create a new object
     let timePassed = timestamp - previousTimestamp;
     previousTimestamp = timestamp;
@@ -124,9 +127,11 @@ function animate(timestamp){
         timeSinceLastSpawn = 0;
     }
     // update and draw timer
-    timePlayed += timePassed;
     let timeLeft = gameDuration - timePlayed;
     drawTimer(formatTime(timeLeft));
+    if(timeLeft <= 0){
+        stopGame();
+    }
     // draw score
     drawScore();
     // update and draw cookies
@@ -140,26 +145,42 @@ function animate(timestamp){
     request = requestAnimationFrame(animate);
 }
 
-// Start animation loop - initial value of zero required to avoid undefined errors
-//animate(0);
+
 function startGame(){
+    resetGame();
     document.getElementById("gameOverlay").style.visibility = "hidden";
     animate(0);
+    // timer loop to track time (seconds) played - repeates every second
+    gameInterval = setInterval(function(){
+        timePlayed++;
+    }, 1000);
 }
 
-function stopGame(){
+function calculateFinalScore(){
+    finalScore = shotsOnTarget + longestStreak * 10; 
+}
+
+function stopGame(interval, request){
+    computeStreak();   
+    clearInterval(interval);
     cancelAnimationFrame(request);
+    mainContext.clearRect(0, 0, mainCanvas.width, mainCanvas.height);
+    cookies = [];
+    calculateFinalScore();
+    document.getElementById("cookiesShot").innerHTML = shotsOnTarget;
+    document.getElementById("bestStreak").innerHTML = longestStreak;
+    document.getElementById("score").innerHTML = finalScore;
     document.getElementById("gameOverlay").style.visibility = "visible";
 }
 
 
-// Formats a number of milliseconds into a MM:SS string
-// Parameters: time - number of milliseconds
+// Formats a number of seconds into a MM:SS string
+// Parameters: time - number of seconds
 // Return: a string represent the time in the format "mm:ss"
-function formatTime(milliseconds){
-    let minutes = Math.floor((milliseconds / 1000) / 60);
-    let seconds = Math.floor(milliseconds / 1000) % 60;
-
+function formatTime(time){
+    let minutes = Math.floor(time / 60);
+    let seconds = time % 60;
+    
     if (seconds < 10){
         seconds = "0" + seconds;
     }
@@ -168,4 +189,12 @@ function formatTime(milliseconds){
     }
 
     return minutes + ":" + seconds;
+}
+
+function resetGame(){
+    shotsOnTarget = 0;
+    currentStreak = 0;
+    longestStreak = 0;
+    timePlayed = 0;
+    gameInterval = null;
 }
