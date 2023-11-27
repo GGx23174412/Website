@@ -15,7 +15,16 @@ let finalScore = 0;
 // variables to track in game time - in seconds
 let gameDuration = 120;
 let timePlayed = 0;
-let gameInterval = null; // stores id returned by the setInterval function used to track timePlayed
+
+// stores id returned by the setInterval function used to track timePlayed
+let gameInterval = null; 
+
+// auxiliary variables - these are used in the animation loop
+// to help track time between frames and to determine when to spawn a new object. 
+// To ensure uniformity on different cpus a new cookie object will be generated every 500 milliseconds.
+let timeSinceLastSpawn = 0;
+let previousTimestamp = 0;
+const spawnInterval = 500; // milliseconds
 
 // Cookie class - defines a cookie object to be drawn in mainCanvas
 class Cookie{
@@ -71,7 +80,8 @@ window.addEventListener("click", function(e){
     // The event gets the coordinates relative to the client window
     let xWindow = e.x;
     let yWindow = e.y;
-    // Calculate the coordinates relative to canvas, considering offset to client window and eventual scalling due to styling
+    // Calculate the coordinates relative to canvas top left corner, 
+    // considering offset to client window and eventual scalling due to styling
     let canvasRect = mainCanvas.getBoundingClientRect();
     let xCanvas = (xWindow - canvasRect.left) / (canvasRect.right - canvasRect.left) * mainCanvas.width;
     let yCanvas = (yWindow - canvasRect.top) / (canvasRect.bottom - canvasRect.top) * mainCanvas.height;
@@ -93,7 +103,8 @@ window.addEventListener("click", function(e){
 // array to store cookie objects
 let cookies = [];
 
-// 
+// Updates the value of longestStreak. A streak is interrupted if an object that's not been shot 
+// reaches the bottom of the canvas.
 function computeStreak(){
     for(i = 0; i < cookies.length; i++){
         if(cookies[i].canBeDeleted && !cookies[i].isShot){
@@ -106,12 +117,6 @@ function computeStreak(){
     }
 } 
 
-// auxiliary variables - these are used in the animation loop (found below)
-// to help track time between frames and to determine when to spawn a new object. 
-// To ensure uniformity on different cpus a new cookie object will be generated every 500 milliseconds.
-let timeSinceLastSpawn = 0;
-let previousTimestamp = 0;
-const spawnInterval = 500; // milliseconds
 
 // Animation loop - updates animation and requests new frame
 function animate(timestamp){
@@ -157,6 +162,9 @@ function startGame(){
 }
 
 function calculateFinalScore(){
+    if(currentStreak > longestStreak){
+        longestStreak = currentStreak;
+    }
     finalScore = shotsOnTarget + longestStreak * 10; 
 }
 

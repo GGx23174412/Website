@@ -1,6 +1,7 @@
 /*
 * Colour scheme:
 * black - #191919
+*burgundy: #71000a
 * dark grey - #272727  
 * font grey - #969696
 */
@@ -19,9 +20,12 @@ body{
     color: #969696;
 }
 
-#logo a {
+#logo{
     /* Using Agbalumo Google font */
     font-family: "Agbalumo";
+}
+
+#logo a {
     color:white;
     text-decoration: none;
     font-size: 28px;
@@ -59,6 +63,23 @@ body{
 }
 
 /* Other */
+.tagLine{
+    font-style:italic;
+    font-size:large;
+    font-weight: bold;
+ }
+
+.founderQuote{
+font-style:italic;
+font-size:large;
+font-weight: bold;
+}
+
+.founderQuote footer{
+    font-size:small;
+    font-weight:normal;
+}
+
 .buttonBanner{
     background-color: #272727;
 	height: 160px;
@@ -111,7 +132,61 @@ canvas{
 }
 
 #gameOverlay{
+    font-family: "Bangers";
+    font-size: 24px;
     z-index: 2;
     background-color: #191919;
     color: white;
+}
+
+#gameOverlay h3{
+    font-size: 52px;
+}
+
+.gameScore{
+    list-style-type: none;
+    padding: 0;
+}
+
+
+.redWrapper{
+    background-color: #71000a;
+}
+
+.blackWrapper{
+    background-color: #272727;
+    color: #d3d3d3;
+}
+
+.blueWrapper{
+    background-image: url("../img/pexels-artem-podrez-7233130-2.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-color: darkblue;
+    color: white;
+}
+
+.tagLine{
+    font-weight: bold;
+    font-size:large;
+}
+.roundPortrait{
+    border-radius: 50%;
+}
+
+.credit{
+    font-size: x-small;
+}
+
+.imageOverlay{
+    color: white;
+    font-size: small;
+    background-color: #191919;
+    opacity: 0.9;
+    visibility: hidden;
+}
+
+.imageOverlay p{
+    margin: 0;
+    padding: 0;
 }

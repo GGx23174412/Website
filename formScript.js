@@ -15,7 +15,7 @@ const descriptionErrorMessage = document.getElementById("descriptionErrorMessage
 
 // Gets the error message element related to a given input element
 // Parameters: element - Html input element
-// Return: The html element represent the error message for the input element  
+// Return: The html element containing the error message for the given input element  
 function getErrorMessageElement(inputElement){
     let errorMessageElement;
     switch(inputElement.id){
@@ -83,7 +83,7 @@ function validateName(element){
         isValid = false;
     }else if(name.length >= 50){
         errorMessage = "First name cannot be longer than 50 characters!";
-        isValid = false
+        isValid = false;
     }
 
     if(isValid){
@@ -105,10 +105,10 @@ function validatePhone(element){
         isValid = false;
     }else if(phoneNumber.length >= 12){
         errorMessage = "Phone number cannot be longer than 12 characters!";
-        isValid = false
+        isValid = false;
     }else if(containsLettersOrSpaces(phoneNumber)){
         errorMessage = "Phone number can only contain digits!";
-        isValid = false
+        isValid = false;
     }
 
     if(isValid){
@@ -129,10 +129,13 @@ function validateEmail(element){
         isValid = false;
     }else if(email.length >= 254){
         errorMessage = "Email address cannot be longer than 254 characters!";
-        isValid = false
-    }else if(email.length < 6 || email.indexOf('@') < 0 || email.indexOf(' ') > -1 || email.substring(email.length - 4) != ".com"){
+        isValid = false;
+    }else if(email.length < 6 || 
+            email.indexOf('@') < 0 || 
+            email.indexOf(' ') > -1 || 
+            email.substring(email.length - 4) != ".com"){
         errorMessage = "Incorrect email address format!";
-        isValid = false
+        isValid = false;
     }
 
     if(isValid){
