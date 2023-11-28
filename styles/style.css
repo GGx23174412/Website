@@ -1,9 +1,11 @@
 /*
 * Colour scheme:
-* black - #191919
-*burgundy: #71000a
-* dark grey - #272727  
+* Eerie black - #191919
+* Barn Red: #71000a
+* Raisin black - #272727  
 * font grey - #969696
+* violet blue - #4357AD
+* yellow - #f7cb15
 */
 
 body{
@@ -42,6 +44,21 @@ body{
 	margin: 0;
 }
 
+.horizontalNav{
+    display:flex;
+    list-style-type: none;
+    padding: 0;
+	margin: 0; 
+}
+
+.socialNav{
+    font-size: 20px;
+}
+
+.horizontalNav li{
+    margin-right: 10px;
+}
+
 .footer a{
     color: #969696;
     text-decoration: none;
@@ -70,9 +87,9 @@ body{
  }
 
 .founderQuote{
-font-style:italic;
-font-size:large;
-font-weight: bold;
+    font-style:italic;
+    font-size:large;
+    font-weight: bold;
 }
 
 .founderQuote footer{
@@ -154,8 +171,8 @@ canvas{
 }
 
 .blackWrapper{
-    background-color: #272727;
-    color: #d3d3d3;
+    background-color: #313131;
+    color: white;
 }
 
 .blueWrapper{
@@ -189,4 +206,10 @@ canvas{
 .imageOverlay p{
     margin: 0;
     padding: 0;
+}
+
+.promotionBanner{
+    font-size: 24px;
+    background-color: #71000a;
+    color: white;
 }

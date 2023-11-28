@@ -7,6 +7,8 @@
     <title>Placeholder Title</title>
     <!-- Add Gogle fonts -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Agbalumo">
+    <!-- Font awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <!-- Include Bootstrap via CDN - https://getbootstrap.com/ -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <!-- Add css last to override Bootstrap -->
@@ -23,7 +25,7 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item">
-                        <a class="nav-link" href="overview.html">Overview</a>
+                        <a class="nav-link" href="about.html">About</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="products.html">Products</a>
@@ -36,6 +38,13 @@
         </div>
     </nav>
     <!-- Working area -->
+    <div class="promotionBanner">
+        <div class="container">
+            <div class="row text-center">
+                <p>Festivus Sale. Up to 40% off.</p>
+            </div>
+        </div>
+    </div>
     <div class="container">
         <div class="row">
             <h2 class="display-3 text-center text-muted my-3">Products</h2>
@@ -55,7 +64,7 @@
                     <p class="card-text">Natural latex is the latex that is harvested from rubber trees, which are organically grown and free of chemicals. 
                         Natural latex is processed to create foam layers that are used for various products, such as mattresses, pillows, gloves, etc. 
                         Natural latex is durable, elastic, and biodegradable.</p>
-                    <a href="#" class="card-link">link</a>
+                    <a href="#" class="card-link">learn more</a>
                     </div>
                 </div>
             </div>
@@ -66,7 +75,7 @@
                     <p class="card-text">Organic latex is a form of natural latex that is certified to be organic by a third-party organization. 
                         Organic latex is farmed without using pesticides, synthetic fertilizers, or genetically modified organisms. 
                         Organic latex also does not contain any fillers or additives that may compromise its quality or safety.</p>
-                    <a href="#" class="card-link">link</a>
+                    <a href="#" class="card-link">learn more</a>
                     </div>
                 </div>
             </div> 
@@ -78,7 +87,7 @@
                         It is cheaper and easier to produce than natural latex, but it is also less resilient, 
                         less breathable, and more prone to allergies and odors. 
                         Synthetic latex is often used for industrial purposes, such as paints, adhesives, and coatings.</p>
-                    <a href="#" class="card-link">link</a>
+                    <a href="#" class="card-link">learn more</a>
                     </div>
                 </div>
             </div>
@@ -86,29 +95,51 @@
                 <div class="card mb-3">
                     <div class="card-body">
                     <h5 class="card-title">Blended Latex</h5>
-                    <p class="card-text">Blended latex is a mixture of natural and synthetic latex. Blended latex usually contains around 15% to 25% natural latex, 
-                        with the rest being synthetic latex. Blended latex is more affordable than natural latex, but it also loses some of the benefits of natural latex, 
-                        such as elasticity and healthiness. Blended latex is commonly used for products that require a balance of cost and performance, such as mattresses, 
+                    <p class="card-text">Blended latex is a mixture of natural and synthetic latex. Blended latex is more affordable than natural latex, 
+                        but it also loses some of the benefits of natural latex, such as elasticity and healthiness. 
+                        Blended latex is commonly used for products that require a balance of cost and performance, such as mattresses, 
                         furniture, and clothing.</p>
-                    <a href="#" class="card-link">link</a>
+                    <a href="#" class="card-link">learn more</a>
                     </div>
                 </div>
             </div> 
         </div>
-        </div>
     </div>
     <div class="container">
-        <div class="row ">
-            <div class="col-md-6">
-                <h5 class="card-title">Natural Latex</h5>
+        <h3>Products by industry</h3>
+        <p>Whatever your industry, Vandeley Industries has the right latex product for you.</p>
+        <div class="row">
+        <div class="col-md-4 mb-3">
+            <div class="card">
+                <img class="card-img-top" src="img/products/pexels-anna-shvets-3844581.jpg" alt="Card image cap">
+                <div class="card-body">
+                <h5 class="card-title">Medical and Surgical</h5>
+                <p class="card-text">Gloves, natural rubber surgical tubing, tourniquets and custom dip molded parts. Photo by Anna Shvets: https://www.pexels.com/@shvetsa/</p>
+                <a href="#" class="btn btn-primary">Go</a>
+                </div>
             </div>
-            <div class="col-md-6">
-                <p>Natural latex is the latex that is harvested from rubber trees, which are organically grown and free of chemicals. 
-                    Natural latex is processed to create foam layers that are used for various products, such as mattresses, pillows, gloves, etc. 
-                    Natural latex is durable, elastic, and biodegradable.</p>
-                <a href="#">link</a> 
-            </div> 
         </div>
+        <div class="col-md-4 mb-3">
+            <div class="card">
+                <img class="card-img-top" src="img/products/pexels-daniel-frank-305568.jpg" alt="Dentist clinic">
+                <div class="card-body">
+                <h5 class="card-title">Orthodontic</h5>
+                <p class="card-text">Orthodontic bands, prophylactic polishing cups, suction tubes and dental dam. Photo by Daniel Frank: https://www.pexels.com/@fr3nks/</p>
+                <a href="#" class="btn btn-primary">Go</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4 mb-3">
+            <div class="card">
+                <img class="card-img-top" src="img/products/pexels-chokniti-khongchum-2280571.jpg" alt="Lab equipment">
+                <div class="card-body">
+                <h5 class="card-title">Laboratory Supply</h5>
+                <p class="card-text">Higly customizable laboratory tubing and equipment. Photo by Chokniti Khongchum: https://www.pexels.com/@chokniti-khongchum-1197604/</p>
+                <a href="#" class="btn btn-primary">Go</a>
+                </div>
+            </div>
+        </div>
+    </div>
     </div>
     <div class="container">
         <div class="row ">
@@ -122,25 +153,36 @@
         <div class="footerTopWrapper">
             <div class="container">
                 <div class="row py-3">
-                    <div class="col-md-3 mb-3">
+                    <div class="col-md-3">
                         <img src="img/logo1.png" alt="This is the Vandeley Industries logo" style="width:150px;height:100px;"/>
+                        <ul class="horizontalNav mt-2">
+                            <li><a href="">Terms of use</a></li>
+                            <li><a href="">Privacy</a></li>
+                            <li><a href="cookies.html">Cookies</i></i></a></li>
+
+                        </ul>
                     </div>
-                    <div class="col-md-3 mb-3">
+                    <div class="col-md-3">
                         <h5>NAVIGATION</h5>
                         <ul>
                             <li><a href="index.html">Home</a></li>
-                            <li><a href="overview.html">Overview</a></li>
+                            <li><a href="about.html">About</a></li>
                             <li><a href="products.html">Products</a></li>
                             <li><a href="contact.html">Contact</a></li>
                         </ul>
                     </div>
-                    <div class="col-md mb-3">
+                    <div class="col-md">
                         <h5>Contact Information</h5>
                         <ul>
-                            <li>Vandeley Industries, 2880 Broadway, New York, NY 10025, USA</li>
-                            <li>+1 800-000-0000</li>
-                            <li>info@vandeleyindustries.com</li>
-                            <li></li>
+                            <li><i class="fa fa-map-marker"></i>&nbsp;Vandeley Industries, 2880 Broadway, New York, NY 10025, USA</li>
+                            <li><i class="fa fa-phone"></i>&nbsp;+1 800-000-0000</li>
+                            <li><i class="fa fa-envelope-o"></i>&nbsp;info@vandeleyindustries.com</li>
+                        </ul>
+                        <ul class="horizontalNav socialNav mt-2">
+                            <li><a href="https://twitter.com"><i class="fa fa-twitter" ></i></a></li>
+                            <li><a href="https://www.facebook.com"><i class="fa fa-facebook" ></i></a></li>
+                            <li><a href="https://instagram.com"><i class="fa fa-instagram"></i></i></a></li>
+                            <li><a href="https://linkedin.com"><i class="fa fa-linkedin"></i></i></a></li>
                         </ul>
                     </div>
                 </div>

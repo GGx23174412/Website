@@ -37,9 +37,9 @@ class Cookie{
         this.x = Math.random() * (mainCanvas.width - this.width);
         // speed - how much y position changes between frames
         this.directionY = (Math.random() * 2) + 3;
-        // image to be drawn      
+        // image to be drawn - note: paths in js are relative to html file location      
         this.image = new Image();
-        this.image.src = "cookieSmall.png";
+        this.image.src = "img/game/cookieSmall.png";
         // boolean to determine when object reaches bottom of canvas
         this.canBeDeleted = false;
         // boolean to determine if mouse click is whithin the object's rectangle
@@ -93,7 +93,7 @@ window.addEventListener("click", function(e){
             yCanvas >= object.y && 
             yCanvas <= (object.y + object.height)){
                 object.isShot = true;
-                object.image.src = "coalSmall.png"
+                object.image.src = "img/game/coalSmall.png"
                 shotsOnTarget++;
                 currentStreak++;
         }
@@ -152,6 +152,7 @@ function animate(timestamp){
 
 
 function startGame(){
+    console.log(window.location.pathname);
     resetGame();
     document.getElementById("gameOverlay").style.visibility = "hidden";
     animate(0);
@@ -169,12 +170,11 @@ function calculateFinalScore(){
 }
 
 function stopGame(interval, request){
-    computeStreak();   
+    calculateFinalScore();
     clearInterval(interval);
     cancelAnimationFrame(request);
     mainContext.clearRect(0, 0, mainCanvas.width, mainCanvas.height);
     cookies = [];
-    calculateFinalScore();
     document.getElementById("cookiesShot").innerHTML = shotsOnTarget;
     document.getElementById("bestStreak").innerHTML = longestStreak;
     document.getElementById("score").innerHTML = finalScore;

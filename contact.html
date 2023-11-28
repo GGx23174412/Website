@@ -7,10 +7,12 @@
     <title>Placeholder Title</title>
     <!-- Add Gogle fonts -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Agbalumo">
+    <!-- Font awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <!-- Include Bootstrap via CDN - https://getbootstrap.com/ -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <!-- Add css last to override Bootstrap -->
-    <link rel="stylesheet" href="styles\style.css" />
+    <link rel="stylesheet" href="styles/style.css" />
 </head>
 <body class="d-flex flex-column min-vh-100">
     <!-- Nav Bar -->
@@ -23,7 +25,7 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item">
-                        <a class="nav-link" href="overview.html">Overview</a>
+                        <a class="nav-link" href="about.html">About</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="products.html">Products</a>
@@ -49,7 +51,14 @@
                     <dt class="my-1">E mail Address</dt>
                         <dd>info@vandeley.com</dd>
                     <dt class="my-1">Social media</dt>
-                    <dd>TODO: add icons and links</dd>
+                    <dd>
+                        <ul class="horizontalNav socialNav mt-2">
+                            <li><a href="https://twitter.com"><i class="fa fa-twitter" ></i></a></li>
+                            <li><a href="https://www.facebook.com"><i class="fa fa-facebook" ></i></a></li>
+                            <li><a href="https://instagram.com"><i class="fa fa-instagram"></i></i></a></li>
+                            <li><a href="https://linkedin.com"><i class="fa fa-linkedin"></i></i></a></li>
+                        </ul>
+                    </dd>
                 </dl>
             </div>
             <div class="col-md-9">
@@ -57,13 +66,12 @@
                 <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3020.024788244982!2d-73.96802178713389!3d40.80544907126045!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c2f63c75af2d65%3A0xf45542f6cb090cc9!2s2880%20Broadway%2C%20New%20York%2C%20NY%2010025%2C%20USA!5e0!3m2!1sen!2sie!4v1699998629014!5m2!1sen!2sie" width="800" height="600" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
             </div>
         </div>
-        <div class="row">
+        <div class="row mb-3">
             <h3 class="text-center my-3">Leave a message</h3>
             <p class="my-3">Get started by filling out the form below and we will connect you with the right expert to answer all your questions.</p>
         </div>
-        <p id="elem1"></p>
         <!-- Form -->
-        <div class="container border border-primary">
+        <div class="container">
             <form id="form" class="row" action="" method="">
                 <div class="col-md-6">
                     <h4>Contact Information</h4>
@@ -152,25 +160,36 @@
         <div class="footerTopWrapper">
             <div class="container">
                 <div class="row py-3">
-                    <div class="col-md-3 mb-3">
+                    <div class="col-md-3">
                         <img src="img/logo1.png" alt="This is the Vandeley Industries logo" style="width:150px;height:100px;"/>
+                        <ul class="horizontalNav mt-2">
+                            <li><a href="">Terms of use</a></li>
+                            <li><a href="">Privacy</a></li>
+                            <li><a href="cookies.html">Cookies</i></i></a></li>
+
+                        </ul>
                     </div>
-                    <div class="col-md-3 mb-3">
+                    <div class="col-md-3">
                         <h5>NAVIGATION</h5>
                         <ul>
                             <li><a href="index.html">Home</a></li>
-                            <li><a href="overview.html">Overview</a></li>
+                            <li><a href="about.html">About</a></li>
                             <li><a href="products.html">Products</a></li>
                             <li><a href="contact.html">Contact</a></li>
                         </ul>
                     </div>
-                    <div class="col-md mb-3">
+                    <div class="col-md">
                         <h5>Contact Information</h5>
                         <ul>
-                            <li>Vandeley Industries, 2880 Broadway, New York, NY 10025, USA</li>
-                            <li>+1 800-000-0000</li>
-                            <li>info@vandeleyindustries.com</li>
-                            <li></li>
+                            <li><i class="fa fa-map-marker"></i>&nbsp;Vandeley Industries, 2880 Broadway, New York, NY 10025, USA</li>
+                            <li><i class="fa fa-phone"></i>&nbsp;+1 800-000-0000</li>
+                            <li><i class="fa fa-envelope-o"></i>&nbsp;info@vandeleyindustries.com</li>
+                        </ul>
+                        <ul class="horizontalNav socialNav mt-2">
+                            <li><a href="https://twitter.com"><i class="fa fa-twitter" ></i></a></li>
+                            <li><a href="https://www.facebook.com"><i class="fa fa-facebook" ></i></a></li>
+                            <li><a href="https://instagram.com"><i class="fa fa-instagram"></i></i></a></li>
+                            <li><a href="https://linkedin.com"><i class="fa fa-linkedin"></i></i></a></li>
                         </ul>
                     </div>
                 </div>
@@ -186,5 +205,5 @@
     </footer>
     <!-- javascript files -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
-    <script src="formScript.js"></script>
+    <script src="scripts/formScript.js"></script>
 </body>
