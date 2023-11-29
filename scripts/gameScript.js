@@ -3,7 +3,7 @@ const mainCanvas = document.getElementById("mainCanvas");
 const mainContext = mainCanvas.getContext("2d");
 mainCanvas.width = 1000;
 mainCanvas.height = 1000;
-mainContext.font = "20px Impact";
+mainContext.font = "40px Impact";
 mainContext.fillStyle = "Black";
 
 // variables to track player's score
@@ -64,13 +64,13 @@ class Cookie{
 
 // draws score text in mainCanvas
 function drawScore(){
-    mainContext.fillText("Shots on target: " + shotsOnTarget, 10, 30);
-    mainContext.fillText("Current streak: " + currentStreak, 10, 50);
-    mainContext.fillText("Longest streak: " + longestStreak, 10, 70);
+    mainContext.fillText("Shots on target: " + shotsOnTarget, 10, 50);
+    mainContext.fillText("Current streak: " + currentStreak, 10, 85);
+    mainContext.fillText("Longest streak: " + longestStreak, 10, 120);
 }
 
 function drawTimer(timeStr){
-    mainContext.fillText(timeStr, (mainCanvas.width - 100), 30);
+    mainContext.fillText(timeStr, (mainCanvas.width - 100), 50);
 }
 
 // Gets the coordinates of a mouse click and checks if any cookie object was hit

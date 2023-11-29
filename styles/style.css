@@ -22,12 +22,8 @@ body{
     color: #969696;
 }
 
-#logo{
-    /* Using Agbalumo Google font */
-    font-family: "Agbalumo";
-}
-
 #logo a {
+    font-family: "Agbalumo";
     color:white;
     text-decoration: none;
     font-size: 28px;
@@ -79,6 +75,17 @@ body{
     font-size: small;
 }
 
+/* Carrousel */
+.carousel-caption{
+    font-size: 24px;
+    color:white;
+    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+}
+
+.carousel-caption h5{
+    font-size: 32px;
+}
+
 /* Other */
 .tagLine{
     font-style:italic;
@@ -97,30 +104,31 @@ body{
     font-weight:normal;
 }
 
-.buttonBanner{
-    background-color: #272727;
-	height: 160px;
-	position: relative;
-    margin-top: 20px;
-    margin-bottom: 50px;
+.promotionBanner{
+    font-size: 24px;
+    background-color: #71000a;
+    color: white;
 }
 
-.buttonBanner button {
-    width:240px;
-    height: 80px;
-    background-color: #fdd711;
-    border-radius: 15px;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%,-50%);
-    font-size: 1.5em;
-    line-height: 80px;
-    text-align: center;
-    margin: 0;
-    padding: 0;
-    text-transform: none;
-    cursor: pointer;
+.blackWrapper{
+    background-color: #313131;
+    color: white;
+}
+
+.blueWrapper{
+    background-image: url("../img/pexels-artem-podrez-7233130-2.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-color: darkblue;
+    color: white;
+}
+
+.roundPortrait{
+    border-radius: 50%;
+}
+
+.credit{
+    font-size: x-small;
 }
 
 /* Form */
@@ -131,6 +139,20 @@ body{
 .formErrorMessage{
     color: red;
     visibility: hidden;
+}
+
+/* Image gallery */
+.imageOverlay{
+    color: white;
+    font-size: small;
+    background-color: #191919;
+    opacity: 0.9;
+    visibility: hidden;
+}
+
+.imageOverlay p{
+    margin: 0;
+    padding: 0;
 }
 
 /* Game */
@@ -163,53 +185,4 @@ canvas{
 .gameScore{
     list-style-type: none;
     padding: 0;
-}
-
-
-.redWrapper{
-    background-color: #71000a;
-}
-
-.blackWrapper{
-    background-color: #313131;
-    color: white;
-}
-
-.blueWrapper{
-    background-image: url("../img/pexels-artem-podrez-7233130-2.jpg");
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-color: darkblue;
-    color: white;
-}
-
-.tagLine{
-    font-weight: bold;
-    font-size:large;
-}
-.roundPortrait{
-    border-radius: 50%;
-}
-
-.credit{
-    font-size: x-small;
-}
-
-.imageOverlay{
-    color: white;
-    font-size: small;
-    background-color: #191919;
-    opacity: 0.9;
-    visibility: hidden;
-}
-
-.imageOverlay p{
-    margin: 0;
-    padding: 0;
-}
-
-.promotionBanner{
-    font-size: 24px;
-    background-color: #71000a;
-    color: white;
 }

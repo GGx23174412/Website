@@ -1,11 +1,10 @@
-/*
 // Moves to next carroussel image
 function scrollCarroussel() {
     document.getElementById("carrouselButton").click();
 }
    
 setInterval(scrollCarroussel, 5000);
-*/
+
 // Galery images click
 // add click event listeners to all images in gallery
 var galleryContainer = document.getElementById("galleryContainer");
@@ -13,7 +12,6 @@ var galleryImages = galleryContainer.getElementsByTagName("img");
 for(i = 0; i < galleryImages.length; i++){
     galleryImages[i].addEventListener("click", toggleImageOverlay);
 }
-
 
 function toggleImageOverlay() {
     let imageOverlay = getImageOverlayElement(this);
