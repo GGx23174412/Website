@@ -131,7 +131,7 @@ function validateEmail(element){
         errorMessage = "Email address cannot be longer than 254 characters!";
         isValid = false;
     }else if(email.length < 6 || 
-            email.indexOf('@') < 0 || 
+            email.indexOf('@') < 1 || 
             email.indexOf(' ') > -1 || 
             email.substring(email.length - 4) != ".com"){
         errorMessage = "Incorrect email address format!";

@@ -1,9 +1,9 @@
 // main canvas set up
 const mainCanvas = document.getElementById("mainCanvas");
 const mainContext = mainCanvas.getContext("2d");
-mainCanvas.width = 1000;
-mainCanvas.height = 1000;
-mainContext.font = "40px Impact";
+mainCanvas.width = 800;
+mainCanvas.height = 600;
+mainContext.font = "30px Impact";
 mainContext.fillStyle = "Black";
 
 // variables to track player's score
@@ -30,13 +30,13 @@ const spawnInterval = 500; // milliseconds
 class Cookie{
     constructor(){
         // dimensions
-        this.width = 100;
-        this.height = 100;
+        this.width = 75;
+        this.height = 75;
         // starting coordinates
         this.y = 0;
         this.x = Math.random() * (mainCanvas.width - this.width);
         // speed - how much y position changes between frames
-        this.directionY = (Math.random() * 2) + 3;
+        this.deltaY = (Math.random() * 2) + 3;
         // image to be drawn - note: paths in js are relative to html file location      
         this.image = new Image();
         this.image.src = "img/game/cookieSmall.png";
@@ -49,7 +49,7 @@ class Cookie{
     updatePosition(){
         // Note: top left of canvas is coordinate x = 0; y = 0
         // when moving down, y increases
-        this.y += this.directionY;
+        this.y += this.deltaY;
         // Object is marked for deletion if it has passed canvas bottom
         if(this.y >= mainCanvas.height){
             this.canBeDeleted = true;
@@ -64,13 +64,13 @@ class Cookie{
 
 // draws score text in mainCanvas
 function drawScore(){
-    mainContext.fillText("Shots on target: " + shotsOnTarget, 10, 50);
-    mainContext.fillText("Current streak: " + currentStreak, 10, 85);
-    mainContext.fillText("Longest streak: " + longestStreak, 10, 120);
+    mainContext.fillText("Shots on target: " + shotsOnTarget, 10, 40);
+    mainContext.fillText("Current streak: " + currentStreak, 10, 70);
+    mainContext.fillText("Longest streak: " + longestStreak, 10, 100);
 }
 
 function drawTimer(timeStr){
-    mainContext.fillText(timeStr, (mainCanvas.width - 100), 50);
+    mainContext.fillText(timeStr, (mainCanvas.width - 100), 40);
 }
 
 // Gets the coordinates of a mouse click and checks if any cookie object was hit
@@ -93,7 +93,9 @@ window.addEventListener("click", function(e){
             yCanvas >= object.y && 
             yCanvas <= (object.y + object.height)){
                 object.isShot = true;
-                object.image.src = "img/game/coalSmall.png"
+                //object.image.src = "img/game/coalSmall.png";
+                object.image.src = "";
+                object.deltaY = 10;
                 shotsOnTarget++;
                 currentStreak++;
         }
@@ -116,7 +118,6 @@ function computeStreak(){
         }
     }
 } 
-
 
 // Animation loop - updates animation and requests new frame
 function animate(timestamp){
@@ -150,7 +151,6 @@ function animate(timestamp){
     request = requestAnimationFrame(animate);
 }
 
-
 function startGame(){
     console.log(window.location.pathname);
     resetGame();
@@ -180,7 +180,6 @@ function stopGame(interval, request){
     document.getElementById("score").innerHTML = finalScore;
     document.getElementById("gameOverlay").style.visibility = "visible";
 }
-
 
 // Formats a number of seconds into a MM:SS string
 // Parameters: time - number of seconds
